@@ -13,6 +13,10 @@ sudo reboot
 
 uname -r确认内核版本为5.10.12
 
+bug:
+
+https://www.spinics.net/lists/kernel/msg3716600.html
+
 ## 卸载kernel
 sudo dpkg -l | grep linux
 
@@ -24,4 +28,21 @@ sudo dpke -r XXXX
 echo /sys/kernel/debug/kprobes/enabled
 
 1为开，0为关
+
+## 查看内核函数
+cat /proc/kallsyms | grep _do_fork
+
+T   The symbol is in the text(code) section
+
+D   The symbol is in the initialized data section
+
+R   The sysbol is in a read only data section
+
+t   static
+
+d   static
+
+R   const
+
+r   static const
 
